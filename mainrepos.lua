@@ -1,14 +1,16 @@
+local me = {}
+
 local SoundService = game:GetService("SoundService")
 local StarterGui = game:GetService("StarterGui")
 
-local function playsound(id)
+local function me:playsound(id)
 	local snd = Instance.new("Sound", SoundService)
 	snd.SoundId = id
 	snd.PlayOnRemove = true
 	snd:Destroy()
 end
 
-local function notify(title,text,soundid,iconid)
+local function me:notify(title,text,soundid,iconid)
 	local currentIconFormat
 	if soundid then
 		playsound(soundid)
